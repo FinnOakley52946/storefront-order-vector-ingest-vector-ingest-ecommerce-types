@@ -1,0 +1,25 @@
+{
+  "name": "storefront-order-vector-ingest",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup:collection": "tsx src/create_order_collection.ts",
+    "dev": "tsx src/order_update_service.ts",
+    "ingest:sample": "tsx scripts/ingest_sample_order.ts",
+    "test": "node --import tsx --test test/order_document_chunker.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "openai": "^5.12.2",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
